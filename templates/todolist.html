@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LISTA DE TAREFAS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+  <body>
+    <div style="margin-top: 50px" class="ui container">
+      <h1 class="ui center aligned header">Minha Lista de Tarefas</h1>
+
+      <form class="ui form" action="/add" method="post">
+        <div class="field">
+          <label>Título da Tarefa</label>
+          <input type="text" name="title" placeholder="Insira o titulo da tarefa..." />
+          <br />
+        </div>
+        <div class="field">
+          <label>Descrição da Tarefa</label>
+          <input type="text" name="description" placeholder="Insira o descrição da tarefa..." />
+          <br />
+        </div>
+        <button class="ui blue button" type="submit">Adicionar</button>
+      </form>
+
+      <hr />
+
+      {% for todo in todo_list %}
+      <div class="ui segment">
+        <p class="ui big header">{{ todo.id }} | {{ todo.title }} | {{ todo.description }}</p>
+
+        {% if todo.completed == False %}
+        <span class="ui gray label">Não concluído</span>
+        {% else %}
+        <span class="ui green label">Concluído</span>
+        {% endif %}
+
+        <a class="ui blue button" href="/update/{{ todo.id }}">Atualizar</a>
+        <a class="ui red button" href="/delete/{{ todo.id }}">Excluir</a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
