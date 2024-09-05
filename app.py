@@ -37,7 +37,7 @@ def add(req: Request, title: str = Form(...), description: str = Form(...), db: 
 
 # PATCH
 @app.get("/tasks/{task_id}")
-def add(req: Request, task_id: int, db: Session = Depends(get_db)):
+def patch(req: Request, task_id: int, db: Session = Depends(get_db)):
 	todo = db.query(models.Todo).filter(models.Todo.id == task_id).first()
 	todo.completed = not todo.completed
 	db.commit()
@@ -46,7 +46,7 @@ def add(req: Request, task_id: int, db: Session = Depends(get_db)):
 
 # DELETE
 @app.get("/tasks/{task_id}")
-def add(req: Request, task_id: int, db: Session = Depends(get_db)):
+def delete(req: Request, task_id: int, db: Session = Depends(get_db)):
 	todo = db.query(models.Todo).filter(models.Todo.id == task_id).first()
 	db.delete(todo)
 	db.commit()
@@ -55,7 +55,7 @@ def add(req: Request, task_id: int, db: Session = Depends(get_db)):
 
 # GET BY ID
 @app.get("/tasks/{task_id}")
-def add(req: Request, task_id: int, db: Session = Depends(get_db)):
+def find(req: Request, task_id: int, db: Session = Depends(get_db)):
 	todo = db.query(models.Todo).filter(models.Todo.id == task_id).first()
 	db.find(todo)
 	db.commit()
@@ -64,7 +64,7 @@ def add(req: Request, task_id: int, db: Session = Depends(get_db)):
 
 # PUT
 @app.put("/tasks/{task_id}")
-def add(req: Request, task_id: int, title: str = Form(...), description: str = Form(...), db: Session = Depends(get_db)):
+def put(req: Request, task_id: int, title: str = Form(...), description: str = Form(...), db: Session = Depends(get_db)):
   todo = db.query(models.Todo).filter(models.Todo.id == task_id).first()
   todo = models.Todo(title=title, description=description)
   todo.completed = not todo.completed
