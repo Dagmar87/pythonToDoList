@@ -27,8 +27,8 @@ Esse projeto consiste na criação de um microserviço para gerenciar uma lista 
 - pip install fastapi uvicorn jinja2 python-multipart sqlalchemy || pip install -r requirements.txt (Instalar as bibliotecas python do projeto)
 - uvicorn app:app --reload (Rodar o projeto)
 
-Obs: python3 -m pip install --upgrade pip (Atualizar Pip, se for necessario)
-Obs2: pip install virtualenv (Windows) || sudo pip install virtualenv (Linux) ==> (Caso não tenha o ambiente de trabalho Python instalado no computador)
++ Obs: python3 -m pip install --upgrade pip (Atualizar Pip, se for necessario)
++ Obs2: pip install virtualenv (Windows) || sudo pip install virtualenv (Linux) ==> (Caso não tenha o ambiente de trabalho Python instalado no computador)
 
 ## Instruções para rodar o projeto com Docker
 
@@ -40,5 +40,5 @@ Obs2: pip install virtualenv (Windows) || sudo pip install virtualenv (Linux) ==
 - docker run --name pythonToDoList-container -p 80:80 pythonToDoList
 - docker run -d --name pythonToDoList-container -p 80:80 pythonToDoList
 
-Obs: python3 -m pip install --upgrade pip (Atualizar Pip, se for necessario)
-Obs2: pip install virtualenv (Windows) || sudo pip install virtualenv (Linux) ==> (Caso não tenha o ambiente de trabalho Python instalado no computador)
++ Obs: python3 -m pip install --upgrade pip (Atualizar Pip, se for necessario)
++ Obs2: pip install virtualenv (Windows) || sudo pip install virtualenv (Linux) ==> (Caso não tenha o ambiente de trabalho Python instalado no computador)
