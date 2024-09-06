@@ -17,6 +17,7 @@ Esse projeto consiste na criação de um microserviço para gerenciar uma lista 
 - Banco de Dados SQLite
 - IDE VSCode 
 - Bibliotecas Python (fastapi, uvicorn, jinja2, python-multipart, sqlalchemy)
+- Docker
 
 ## Instruções para rodar o projeto
 
